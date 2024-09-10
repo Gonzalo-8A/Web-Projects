@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<HTML>
+  <head>
+    <title>Oliver Twitter</title>
+    <style>
+
+      div {
+        font-family: arial;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+      .tweet {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 420px;
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+      }
+
+      .profile-pic {
+        margin-bottom: 80px;
+        margin-right: 15px;
+      }
+
+      .profile-image {
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+        border-radius: 25px;
+
+      }
+
+      .tweet-column {
+        flex: 1;
+      }
+
+      .tweet-header {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5px;
+      }
+
+      .tweet-author {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      .tweet-account{
+        color: gray;
+      }
+
+      .tweet-info {
+        line-height: 20px;
+      }
+
+      .tweet-video {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 15px;
+        border-color: rgb(200, 200, 200);
+        height: 80px;
+        overflow: hidden;
+        margin-top: 5px;
+      }
+
+      .video-preview {
+        background-color: rgb(200, 200, 200);
+        width: 100px;
+        height: 100px;
+      }
+
+      .youtube {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        line-height: 20px;
+        flex: 1;
+      }
+
+      .youtube-link {
+        color: rgb(111, 111, 111);
+      }
+
+      .video-title {
+        line-height: 22px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tweet">
+      <div class="profile-pic">
+        <img class="profile-image" src="images/gato 3.jpg">
+      </div>
+      <div class="tweet-column">
+        <div class="tweet-header">
+          <div class="tweet-author">oliverthecat.cat</div>
+          <div class="tweet-account">@Fluffycat</div>
+        </div>
+        <div class="tweet-info">What is backend web development? A complete overview. New video is up!</div>
+        <div class="tweet-video">
+          <div class="video-preview"></div>
+          <div class="youtube">
+            <div class="youtube-link">youtube.com</div>
+            <div class="video-title">Back web develoment - a complete overview</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</HTML>

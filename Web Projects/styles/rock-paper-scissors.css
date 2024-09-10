@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: rgb(50, 50, 50);
+}
+
+
+p {
+  color: white;
+  font-size: 1.25rem;
+}
+
+.hideElement {
+  display: none;
+}
+
+.resetScore-message {
+  color: white;
+  border: none;
+  background-color: rgb(27, 27, 27);
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+
+.js-yes-button, .js-no-button {
+  border: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10%;
+}
+
+.container {
+  scale: 2;
+  text-align: center;
+}
+
+img {
+  height: 3rem;
+}
+
+.moves{
+  height: 6rem;
+  width: 6rem;
+  border: 1px rgb(249, 187, 4) solid;
+  border-radius: 50%;
+  background-color: rgb(149, 139, 101);
+}
+
+.moves:active {
+  background: #917d37;
+  -webkit-box-shadow: inset 0px 0px 5px #917d37;
+     -moz-box-shadow: inset 0px 0px 5px #917d37;
+          box-shadow: inset 0px 0px 5px #917d37;
+   outline: none;
+}
+
+.js-moves {
+  text-align: center;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en, es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- <link rel="stylesheet" href="styles/.css"> -->
+     <style>
+        body{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        .container {
+          margin: 0 auto;
+        }
+
+        button {
+          padding: 1rem;
+          width: 7rem;
+          border: none;
+          background-color: aquamarine;
+          box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+        }
+
+        
+
+
+     </style>
+  </head>
+  <body>
+    <div class="container">
+      <button onclick="
+        playGame('heads');
+      ">Heads</button>
+      <button onclick="
+        playGame('tails');
+      ">Tails</button>
+    </div>
+
+    <script>
+      
+      const score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+      };
+
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        const result = randomNumber <= 0.5 ? 'heads' : 'tails';
+
+        console.log(guess === result ? 'You win!' : 'You lose!');
+
+        if (guess === result) {
+          score.wins +=1
+        } else {
+          score.losses +=1
+        }
+
+        console.log(`Wins: ${score.wins}. Losses: ${score.losses}`)
+
+        localStorage.setItem('score', JSON.stringify(score))
+      }
+
+    </script>
+  </body>
+</html>

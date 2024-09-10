@@ -1,0 +1,110 @@
+:root {
+    --clr-primary-1: hsl(227, 69%, 60%);
+    --clr-primary-2: hsl(227, 77%, 41%);
+
+    --clr-neutral-1: #fff;
+}
+
+*, ::before, ::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: dark light;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    font-size: 1.25rem;
+    min-block-size: 100svh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+h1, h2, h3 {
+    line-height: 1.1;
+}
+
+.container {
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+    background-image: linear-gradient(-35deg, var(--clr-primary-2),var(--clr-primary-1));
+    border-radius: 1rem; 
+    padding: 5rem 5rem;
+    box-shadow: 0 0 0 1rem
+    hsl(from var(--clr-primary-1) h s l / .2);
+    position: relative;
+
+}
+
+.container > p{
+    font-size: 0.8125rem;
+    width: min(35ch, 100%);
+
+}
+
+.container form {
+    position: relative;
+    width: 75%;
+}
+.container input {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border-radius: 100vw;
+    background-color: hsl(from var(--clr-neutral-1) h s l / .35);
+    border: 1px solid var(--clr-neutral-1);
+    &::placeholder {
+        color: var(--clr-neutral-1);}
+}
+
+.container button {
+    position: absolute;
+    background: white;
+    border: 0;
+    border-radius: 100vw;
+    color: black;
+    aspect-ratio: 1;
+    inset: 5px 5px 5px auto;
+}
+
+.portrait {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: -3rem;
+    height: 75px;
+    overflow-y: clip;
+}
+.avatar {
+    width: 75px;
+    border: 5px solid white;
+    border-radius: 50%;
+    object-fit: cover;
+    aspect-ratio: 1;
+    box-shadow: 0 5px .5rem rgb(0, 0, 0 / .3);
+    
+
+}
+
+.portrait.centered {
+    justify-content: center;
+}
+
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+white-space: nowrap;
+border-width: 0;
+}

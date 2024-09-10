@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en, es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- <link rel="stylesheet" href="styles/.css"> -->
+  </head>
+  <body>
+
+    <button class="js-start-button" onclick="
+      update();
+      ">Start</button>
+
+    <button class="js-add-button" onclick="
+      addToCart();
+    ">Add to cart</button>
+    <p class="js-message"></p>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      // let add = function(){
+      //   console.log(2+3);
+      // };
+
+      // add();
+      // add();
+
+
+      // function runTwice(fun) {
+      //   fun();
+      //   fun();
+      // }
+
+      // runTwice(add);
+
+
+      // function update() {
+      //   const buttonElement = document.querySelector('.js-start-button');
+
+      //   buttonElement.innerHTML = 'Loading...'
+
+      //   setTimeout(function() {
+      //     buttonElement.innerHTML = 'Finished!';
+      //   }, 2000);
+      // }
+
+      // let timeOutId;
+      // function addToCart() {
+      //   const messageElement = document.querySelector('.js-message');
+
+      //   messageElement.innerHTML = 'Added';
+
+      //   clearTimeout(timeOutId);
+
+      //   timeOutId = setTimeout(() => {
+      //     messageElement.innerHTML = '';
+      //   }, 2500);
+      // }
+
+      // const countPositive = (nums) => {
+      //   let possitveNums = '';
+        
+      //   nums.forEach((num) => {
+      //     if(num > 0) {
+      //       possitveNums++;
+      //     }
+      //   })
+
+      //   return possitveNums;
+      // }
+
+      // console.log(countPositive([1,-22,3]));
+
+
+      // function addNum(array, num) {
+      //  return array.map (value => value + num);
+      // };
+
+      // console.log(addNum([1,2,3],2));
+
+
+
+      function removeEggs(foods) {
+        let removedFood = 0;
+
+        return foods.filter(value => {
+          if (value === 'eggs' && removedFood < 2) {
+            removedFood++;
+            return false
+          }
+          return true;
+        });
+      }
+
+      console.log(removeEggs(['eggs', 'milk', 'eggs', 'apple', 'eggs']))
+
+    </script>
+  </body>
+</html>

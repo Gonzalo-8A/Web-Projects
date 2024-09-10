@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  color: white;
+  font-size: 2rem;
+}
+
+.container {
+  background-color: black;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+button {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.3rem;
+  font-size: 2rem;
+  border: none;
+}
+
+.numbers{
+  background-color: rgb(100, 100, 100);
+  color: white;
+}
+
+.numbers:hover {
+  background-color: rgb(50, 50, 50);
+}
+
+.numbers:active {
+  background-color: rgb(25, 25, 25);
+}
+
+.symbols {
+  background-color: orange;
+  color: white;
+}
+
+.symbols:hover {
+  background-color: rgb(192, 132, 22);
+}
+
+.symbols:active {
+  background-color: rgb(157, 110, 24);
+}
+
+.col2 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.clear {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 100%;
+  border-radius: 0.7rem;
+}

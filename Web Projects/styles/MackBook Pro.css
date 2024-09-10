@@ -1,0 +1,41 @@
+p {
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.new {
+  color: rgb(245, 99, 0);
+  font-size: 12;
+  margin-bottom: 10px;
+}
+
+.mackbook {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-weight: lighter;
+  color: rgb(72, 72, 72);
+  margin-bottom: 15px;
+}
+
+.buy {
+  background-color: rgb(0, 113, 227);
+  color: white;
+  font-size: 12;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 30px;
+  cursor: pointer;
+}
