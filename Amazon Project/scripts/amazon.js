@@ -1,4 +1,4 @@
-import {cart} from '../data/cart.js';
+import {cart, addToCart} from '../data/cart.js';
 import {products} from '../data/products.js';
 
 
@@ -61,6 +61,17 @@ products.forEach((product) => {
 document.querySelector('.js-products-grid')
   .innerHTML = productsHTML;
 
+function updateCartQuantity() {
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+
+  document.querySelector('.js-cart-quantity')
+    .innerHTML = cartQuantity;
+};
+
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
     let addedMessageTimeoutId;
@@ -68,38 +79,14 @@ document.querySelectorAll('.js-add-to-cart')
     button.addEventListener('click', () => {
       const {productId} = button.dataset;
 
-      let matchingItem;
+      addToCart(productId);
 
-      cart.forEach((item) => {
-        if (productId === item.productId) {
-          matchingItem = item;
-        }
-      });
+      updateCartQuantity();
 
-      const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
-      const quantity = Number(quantitySelector.value);
-
-      if (matchingItem) {
-        matchingItem.quantity += quantity;
-      } else {
-        cart.push({
-          productId,
-          quantity
-        });
-      }
-
-      let cartQuantity = 0;
-
-      cart.forEach((item) => {
-        cartQuantity += item.quantity;
-      });
-
-      document.querySelector('.js-cart-quantity')
-        .innerHTML = cartQuantity;
-
-
-      const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
-      addedMessage.classList.add('added-to-cart-visible');
+      const addedMessage = document.querySelector
+        (`.js-added-to-cart-${productId}`);
+      addedMessage.classList.add
+        ('added-to-cart-visible');
       
       if (addedMessageTimeoutId) {
         clearTimeout(addedMessageTimeoutId)
@@ -109,5 +96,6 @@ document.querySelectorAll('.js-add-to-cart')
       }, 2000);
 
       addedMessageTimeoutId = timeoutId;
+
     });
-  })
+  });
