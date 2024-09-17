@@ -10,6 +10,7 @@ import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryOptions,
   getDeliveryOption
  } from '../../data/deliveryOptions.js';
+import { renderPaymentSummary } from './paymentSummary.js';
 
 
 export function renderOrderSummary() {
@@ -155,6 +156,7 @@ export function renderOrderSummary() {
     .forEach((link) => {
       link.addEventListener('click', () => {
         saveLink(link);
+        renderPaymentSummary();
       });
     });
 
@@ -164,13 +166,13 @@ export function renderOrderSummary() {
       link.addEventListener('click', () => {
         const {productId} = link.dataset;
         removeFromCart(productId);
-        console.log(cart);
 
         const container = document.querySelector(
           `.js-cart-item-container-${productId}`
         )
         container.remove();
         updateCartQuantity();
+        renderPaymentSummary();
       })
     });
 
@@ -189,6 +191,7 @@ export function renderOrderSummary() {
         const {productId, deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId, deliveryOptionId);
         renderOrderSummary();
+        renderPaymentSummary();
       });
     });
   };
