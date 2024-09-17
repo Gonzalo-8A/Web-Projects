@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en, es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- <link rel="stylesheet" href="styles/.css"> -->
+  </head>
+  <body>
+
+
+
+
+
+  <script src="https://unpkg.com/dayjs@1.11.10/dayjs.min.js"></script>
+  <script>
+
+    // const today = dayjs();
+    // // const day = today.subtract (1, 'months');
+    // console.log(today.format('dddd'));
+
+
+  function isWeekend(date) {
+    if (date === 'Saturday' || date === 'Sunday') {
+      console.log('Yes :D')
+    } else {
+      console.log('No D:')
+    }
+  };
+  console.log(dayjs().add(4, 'days').format('dddd'));
+  isWeekend(dayjs().add(4, 'days').format('dddd'));
+
+  </script>
+  </body>
+</html>
