@@ -155,6 +155,8 @@ export function renderOrderSummary() {
       link.addEventListener('click', () => {
         saveLink(link);
         renderPaymentSummary();
+        renderCheckoutHeader();
+        renderOrderSummary();
       });
     });
 
