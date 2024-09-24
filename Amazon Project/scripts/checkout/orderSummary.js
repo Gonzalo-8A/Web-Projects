@@ -11,6 +11,7 @@ import { deliveryOptions,
   getDeliveryOption
  } from '../../data/deliveryOptions.js';
 import { renderPaymentSummary } from './paymentSummary.js';
+import { renderCheckoutHeader } from './checkoutHeader.js';
 
 
 export function renderOrderSummary() {
@@ -167,10 +168,8 @@ export function renderOrderSummary() {
         const {productId} = link.dataset;
         removeFromCart(productId);
 
-        const container = document.querySelector(
-          `.js-cart-item-container-${productId}`
-        )
-        container.remove();
+        renderCheckoutHeader();
+        renderOrderSummary();
         updateCartQuantity();
         renderPaymentSummary();
       })
