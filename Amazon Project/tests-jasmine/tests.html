@@ -14,12 +14,26 @@
   <script src="lib/jasmine-5.1.1/boot1.js"></script>
 
   <script src="utils/moneyTest.js" type="module"></script>
-  <!-- <script src="data/cartTest.js" type="module"></script> -->
+  <script src="data/cartTest.js" type="module"></script>
   <script src="checkout/orderSummaryTest.js" type="module"></script>
 
 </head>
 
 <body>
   <div class="js-test-container"></div>
+  <div class="product-quantity-container">
+    <select class="js-quantity-selector-${product.id}">
+      <option selected value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </div>
 </body>
 </html>
