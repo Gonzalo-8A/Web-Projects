@@ -4,12 +4,6 @@ import {orders} from '../data/orders.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { formatCurrency } from './utils/money.js';
 
-document.querySelector('.js-clean-orders-button')
-  .addEventListener('click', () => {
-    cart.clearLocalStorage();
-    location.reload();
-  })
-
 async function loadPage() {
   await loadProductsFetch()
 
@@ -91,6 +85,11 @@ async function loadPage() {
 
 loadPage();
 
+document.querySelector('.js-clean-orders-button')
+  .addEventListener('click', () => {
+    cart.clearLocalStorage('orders');
+    location.reload();
+  })
 
 //* For header cart *//
 

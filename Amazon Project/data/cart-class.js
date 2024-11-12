@@ -18,8 +18,8 @@ class Cart {
   saveToStorage() {
     localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems))
   }
-  clearLocalStorage() {
-    localStorage.clear();
+  clearLocalStorage(item) {
+    localStorage.removeItem(item);
   }
   addToCart(productId) {
     let matchingItem;
