@@ -4,15 +4,21 @@ import {orders} from '../data/orders.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { formatCurrency } from './utils/money.js';
 
+document.querySelector('.js-clean-orders-button')
+  .addEventListener('click', () => {
+    cart.clearLocalStorage();
+    location.reload();
+  })
+
 async function loadPage() {
   await loadProductsFetch()
 
   let ordersHTML = '';
 
   orders.forEach((order) => {
-    const orderTimeString = dayjs(order.orderTime).fromat('MMMM D');
+    const orderTimeString = dayjs(order.orderTime).format('MMMM D');
 
-    ordersHTML = `
+    ordersHTML += `
     <div class="order-container">
           <div class="order-header">
             <div class="order-header-left-section">
@@ -42,10 +48,10 @@ async function loadPage() {
   function productsListHTML(order) {
     let productListHTML = '';
 
-    order.forEach((productDetails) => {
+    order.products.forEach((productDetails) => {
       const product = getProduct(productDetails.productId);
 
-      let  productListHTML = `
+      productListHTML += `
         <div class="product-image-container">
           <img src="${product.image}">
         </div>
@@ -83,6 +89,8 @@ async function loadPage() {
     .innerHTML = ordersHTML;
 }
 
+loadPage();
+
 
 //* For header cart *//
 
@@ -96,4 +104,3 @@ function updateCartQuantity() {
 }
 updateCartQuantity();
 
-console.log()
