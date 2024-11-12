@@ -179,6 +179,8 @@ export function renderOrderSummary() {
   }
   updateCartQuantity();
 
+  console.log(cart.cartItems);
+
 
   document.querySelectorAll('.js-delivery-option')
     .forEach((element) => {
