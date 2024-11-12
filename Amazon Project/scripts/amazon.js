@@ -57,6 +57,7 @@ function renderProductsGrid() {
     `;
   });
   document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
   function updateCartQuantity() {
     let cartQuantity = 0;
     cart.cartItems.forEach((cartItem) => {

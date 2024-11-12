@@ -81,6 +81,8 @@ export function renderPaymentSummary() {
       }
 
       window.location.href = 'orders.html';
+      
+      cart.emptyCart();
     });
 }
 
