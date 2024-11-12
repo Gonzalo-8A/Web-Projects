@@ -47,6 +47,26 @@ class Cart {
   
     this.saveToStorage();
   }
+  addToCartOnlyOne(productId) {
+    let matchingItem;
+  
+    this.cartItems.forEach((cartItem) => {
+      if (productId === cartItem.productId) {
+        matchingItem = cartItem;
+      }
+    });
+    if (matchingItem) {
+      matchingItem.quantity += 1;
+    } else {
+      this.cartItems.push({
+        productId,
+        quantity: 1,
+        deliveryOptionId: '1'
+      });
+    }
+  
+    this.saveToStorage();
+  }
   removeFromCart(productId) {
     const newCart = [];
   
