@@ -6,15 +6,14 @@ import { loadProducts, loadProductsFetch } from "../data/products.js";
 // import '../data/car.js'
 
 
-loadProductsFetch()
-.then(() => {
+async function loadPage() {
+  await loadProductsFetch()
+ 
   renderCheckoutHeader();
   renderOrderSummary();
   renderPaymentSummary();
-});
 
-// loadProducts(() => {
-//   renderCheckoutHeader();
-//   renderOrderSummary();
-//   renderPaymentSummary();
-// });
+}
+
+loadPage();
+
