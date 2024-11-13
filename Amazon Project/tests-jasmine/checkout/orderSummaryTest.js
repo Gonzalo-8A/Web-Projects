@@ -1,25 +1,25 @@
 import {renderOrderSummary} from '../../scripts/checkout/orderSummary.js';
-import {loadFromStorage, cart} from '../../data/cart.js';
-import {loadProducts, loadProductsFetch} from '../../data/products.js';
+import { cart } from '../../data/cart-class.js';
+import { loadProductsFetch } from '../../data/products.js';
 
 describe('test suite: renderOrderSummary', () => {
   const productId1 = 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6';
   const productId2 = '15b6fc6f-327a-4ec4-896f-486349e85a3d';
 
-  beforeAll((done) => {
-    loadProductsFetch().then(() => {
-      done();
-    });
+  beforeAll(async () => {
+    await loadProductsFetch();
   });
 
-  beforeEach(() => {
+  beforeEach(async () => {
     spyOn(localStorage, 'setItem');
 
     document.querySelector('.js-test-container').innerHTML = `
+      <div class="js-checkout-header"></div>
       <div class="js-order-summary"></div>
+      <div class="js-cart-quantity"></div>
       <div class="js-payment-summary"></div>
     `;
-
+    
     spyOn(localStorage, 'getItem').and.callFake(() => {
       return JSON.stringify([{
         productId: productId1,
@@ -31,7 +31,7 @@ describe('test suite: renderOrderSummary', () => {
         deliveryOptionId: '2'
       }]);
     });
-    loadFromStorage();
+    cart.loadFromStorage();
 
     renderOrderSummary();
   });
@@ -61,8 +61,8 @@ describe('test suite: renderOrderSummary', () => {
     expect(
       document.querySelector(`.js-cart-item-container-${productId2}`)
     ).not.toEqual(null);
-    expect(cart.length).toEqual(1);
-    expect(cart[0].productId).toEqual(productId2);
+    expect(cart.cartItems.length).toEqual(1);
+    expect(cart.cartItems[0].productId).toEqual(productId2);
 
     document.querySelector('.js-test-container').innerHTML = '';
   });
