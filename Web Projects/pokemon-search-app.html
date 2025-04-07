@@ -14,19 +14,19 @@
         <div class="pokedex-header">
           <h1>Pokédex</h1>
         </div>
-        <div id="pokemons-container" class="pokemons-container">
-          <div class="pokemon-card">
+        <button id="compare-btn">Add a Pokémon</button>
+        <div id="pokemons-container" class="">
+          <div class="pokemon-card" id="pokemon-card-0">
             <div class="pokemon-input">
               <label for="pokemon-input"></label>
               <input id="pokemon-input" type="text">
               <button id="search-btn"></button>
             </div>
             <div class="pokemon-info">
-              <h2 id="pokemon-name"></h2>
-              <p id="pokemon-body-info"></p>
-              <img id="pokemon-image" src="" alt="Pokemon image" style="display:none">
+              <h2 class="pokemon-name"></h2>
+              <p class="pokemon-body-info"></p>
+              <img class="pokemon-image" src="" alt="Pokemon image" style="display:none">
               <div id="types" class="pokemon-types">
-          
               </div>
             </div>
             <div class="pokemon-stats" style="display:none">
@@ -41,27 +41,27 @@
                 <tbody>
                   <tr>
                     <td>HP:</td>
-                    <td class="stat" id="hp"></td>
+                    <td class="stat-0" id="hp-0"></td>
                   </tr>
                   <tr>
                     <td>Attack:</td>
-                    <td class="stat" id="attack"></td>
+                    <td class="stat-0" id="attack-0"></td>
                   </tr>
                   <tr>
                     <td>Defense:</td>
-                    <td class="stat" id="defense"></td>
+                    <td class="stat-0" id="defense-0"></td>
                   </tr>
                   <tr>
                     <td>Sp. Attack:</td>
-                    <td class="stat" id="special-attack"></td>
+                    <td class="stat-0" id="special-attack-0"></td>
                   </tr>
                   <tr>
                     <td>Sp. Defense:</td>
-                    <td class="stat" id="special-defense"></td>
+                    <td class="stat-0" id="special-defense-0"></td>
                   </tr>
                   <tr>
                     <td>Speed:</td>
-                    <td class="stat" id="speed"></td>
+                    <td class="stat-0" id="speed-0"></td>
                   </tr>
                 </tbody>
               </table>

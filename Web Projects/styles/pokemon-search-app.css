@@ -1,4 +1,14 @@
 /* Estilos generales */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -14,6 +24,7 @@ body {
   background-repeat: no-repeat;
 }
 
+
 .pokedex {
   background: #f2f2f2;
   border: 2px solid #ccc;
@@ -21,6 +32,14 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 400px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comparing {
+  width: 700px;
 }
 
 .pokedex-header {
@@ -29,7 +48,19 @@ body {
   color: white;
   padding: 10px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#compare-btn{
+  padding: 10px;
+  border-radius: 1rem;
+  color: white;
+  background: red;
+  border: 2px solid white;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  max-width: 200px;
 }
 
 .pokemon-input {
@@ -47,7 +78,7 @@ body {
   padding-left: 1rem;
 }
 
-#search-btn {
+#search-btn, #search-btn-compare {
   background: linear-gradient(to bottom, #ff0000 50%, #ffffff 50%);
   border: 2px solid #000000;
   color: #000000;
@@ -63,7 +94,7 @@ body {
   transition: all 0.3s ease;
 }
 
-#search-btn::before {
+#search-btn::before, #search-btn-compare::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -75,7 +106,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
-
+.pokemons-container{
+  display: flex;
+  gap: 2rem;
+}
 
 .pokemon-card {
   display: flex;
@@ -92,12 +126,13 @@ body {
   min-height: 300px;
 }
 
-#pokemon-name {
+.pokemon-name {
   font-size: 24px;
   margin-bottom: 10px;
+  margin-top: 15px;
 }
 
-#pokemon-image {
+.pokemon-image {
   width: 150px;
   height: 150px;
   object-fit: contain;
@@ -106,7 +141,7 @@ body {
 }
 
 /* Contenedor general de tipos */
-#types {
+#types, .pokemon-types {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
