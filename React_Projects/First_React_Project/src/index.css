@@ -9,7 +9,7 @@ html {
   line-height: 1.5;
 
   color: #ebe7ef;
-  background: #23272F;
+  background: #26272b;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -58,40 +58,37 @@ main h2 {
   color: white;
 }
 
-#core-concepts {
-  padding: 2rem;
-  border-radius: 6px;
-  background-color: #140524;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+#coreConcepts {
+  padding: 1rem;
+  background-color: #12071d;
+  border-radius: 1rem;
 }
 
-#core-concepts ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+#coreConcepts h2 {
+  font-size: 2rem;
+}
+
+#coreConceptsCards {
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 3rem;
 }
 
-#core-concepts li {
-  width: 10rem;
-  text-align: center;
+#coreConceptsCards > * {
+  flex: 1;
+}
+ 
+.coreConceptsCard img {
+   height: 4rem;
 }
 
-#core-concepts li img {
-  height: 4rem;
-  width: 6rem;
-  object-fit: cover;
-}
-
-#core-concepts li h3 {
+.coreConceptsCard h3 {
   margin: 0.5rem 0;
-}
-
-#core-concepts li p {
-  font-size: 0.9rem;
+  text-align: center;
+  background: linear-gradient(40deg, #3b5486, #03d5ff, #3b5486, #03d5ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 }
 
 #examples {
